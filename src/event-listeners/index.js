@@ -12,6 +12,10 @@ import onStampAnnotationAdded from './onStampAnnotationAdded';
 import onSignatureAnnotationAdded from './onSignatureAnnotationAdded';
 import onAnnotationChanged from './onAnnotationChanged';
 import onStickyAnnotationAdded from './onStickyAnnotationAdded';
+import onTextHighlightAnnotationAdded from './onTextHighlightAnnotationAdded';
+import onTextUnderlineAnnotationAdded from './onTextUnderlineAnnotationAdded';
+import onTextSquigglyAnnotationAdded from './onTextSquigglyAnnotationAdded';
+import onTextStrikeoutAnnotationAdded from './onTextStrikeoutAnnotationAdded';
 import onFullScreenChange from './onFullScreenChange';
 import onUpdateAnnotationPermission from './onUpdateAnnotationPermission';
 import onLayoutChanged from './onLayoutChanged';
@@ -34,6 +38,10 @@ export {
   onSignatureAnnotationAdded,
   onAnnotationChanged,
   onStickyAnnotationAdded,
+  onTextHighlightAnnotationAdded,
+  onTextUnderlineAnnotationAdded,
+  onTextSquigglyAnnotationAdded,
+  onTextStrikeoutAnnotationAdded,
   onFullScreenChange,
   onUpdateAnnotationPermission,
   onLayoutChanged,

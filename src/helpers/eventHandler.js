@@ -19,6 +19,10 @@ export default store => {
   const onStampAnnotationAdded = eventListeners.onStampAnnotationAdded(dispatch);
   const onSignatureAnnotationAdded = eventListeners.onSignatureAnnotationAdded(dispatch);
   const onStickyAnnotationAdded = eventListeners.onStickyAnnotationAdded(store);
+  const onTextHighlightAnnotationAdded = eventListeners.onTextHighlightAnnotationAdded(store);
+  const onTextUnderlineAnnotationAdded = eventListeners.onTextUnderlineAnnotationAdded(store);
+  const onTextSquigglyAnnotationAdded = eventListeners.onTextSquigglyAnnotationAdded(store);
+  const onTextStrikeoutAnnotationAdded = eventListeners.onTextStrikeoutAnnotationAdded(store);
   const onFullScreenChange = eventListeners.onFullScreenChange(store);
   const onLayoutChanged = eventListeners.onLayoutChanged(dispatch);
   const onLocationSelected = eventListeners.onLocationSelected(store);
@@ -43,6 +47,10 @@ export default store => {
       core.addEventListener('pageComplete', onPageComplete);
       core.getTool('AnnotationCreateStamp').on('annotationAdded', onStampAnnotationAdded);
       core.getTool('AnnotationCreateSticky').on('annotationAdded', onStickyAnnotationAdded);
+      core.getTool('AnnotationCreateTextHighlight').on('annotationAdded', onTextHighlightAnnotationAdded);
+      core.getTool('AnnotationCreateTextUnderline').on('annotationAdded', onTextUnderlineAnnotationAdded);
+      core.getTool('AnnotationCreateTextSquiggly').on('annotationAdded', onTextSquigglyAnnotationAdded);
+      core.getTool('AnnotationCreateTextStrikeout').on('annotationAdded', onTextStrikeoutAnnotationAdded);
       core.getTool('AnnotationCreateSignature').on('locationSelected', onLocationSelected);
       core.getTool('AnnotationCreateSignature').on('annotationAdded', onSignatureAnnotationAdded);
       core.getTool('AnnotationCreateRubberStamp').on('annotationAdded', onRubberStampAnnotationAdded);
@@ -69,6 +77,10 @@ export default store => {
       core.removeEventListener('pageComplete', onPageComplete);
       core.getTool('AnnotationCreateStamp').off('annotationAdded', onStampAnnotationAdded);
       core.getTool('AnnotationCreateSticky').off('annotationAdded', onStickyAnnotationAdded);
+      core.getTool('AnnotationCreateTextHighlight').off('annotationAdded', onTextHighlightAnnotationAdded);
+      core.getTool('AnnotationCreateTextUnderline').off('annotationAdded', onTextUnderlineAnnotationAdded);
+      core.getTool('AnnotationCreateTextSquiggly').off('annotationAdded', onTextSquigglyAnnotationAdded);
+      core.getTool('AnnotationCreateTextStrikeout').off('annotationAdded', onTextStrikeoutAnnotationAdded);
       core.getTool('AnnotationCreateSignature').off('locationSelected', onLocationSelected);
       core.getTool('AnnotationCreateRubberStamp').off('annotationAdded', onRubberStampAnnotationAdded);
       hotkeysManager.off();
