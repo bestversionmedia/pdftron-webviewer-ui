@@ -67,6 +67,12 @@ const ReplyArea = ({ annotation }) => {
     }
   };
 
+  const onBlur = e => {
+    // save the reply first
+    postReply(e);
+    setIsFocused(false);
+  };
+
   const handleCancelClick = () => {
     setValue('');
     textareaRef.current.blur();
@@ -96,7 +102,7 @@ const ReplyArea = ({ annotation }) => {
         value={value}
         onChange={value => setValue(value)}
         onSubmit={e => postReply(e)}
-        onBlur={() => setIsFocused(false)}
+        onBlur={e => onBlur(e)}
         onFocus={() => setIsFocused(true)}
         placeholder={`${t('action.reply')}...`}
       />

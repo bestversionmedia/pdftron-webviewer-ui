@@ -24,7 +24,9 @@
     }
 
     &.hidden {
-      display: none;
+      .reply-container {
+        display: none;
+      }
     }
 
     .reply-container {
