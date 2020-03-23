@@ -55,7 +55,10 @@ const ContentArea = ({
         }}
         value={textAreaValue}
         onChange={onTextAreaValueChange}
-        onBlur={() => setIsEditing(false)}
+        onBlur={e => {
+          setIsEditing(false);
+          setContents(e);
+        }}
         onSubmit={setContents}
         placeholder={`${t('action.comment')}...`}
       />
